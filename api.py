@@ -50,7 +50,7 @@ def serveWeek(week):
                 'name': fp['name']
             }
 
-    return(jsonify(results=res))
+    return(jsonify(res))
 
 @app.route('/api/notes')
 def serveNotes():
