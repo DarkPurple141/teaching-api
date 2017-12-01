@@ -1,4 +1,5 @@
-# create our little application :)
+#!/usr/bin/env python3
+
 import os, logging
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, jsonify, send_from_directory
