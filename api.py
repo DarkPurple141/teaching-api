@@ -36,7 +36,7 @@ def sendMeta(week):
 @app.route('/api/labs')
 def serveLabs():
     f = FileParser('labs/')
-    return(jsonify(f.sendProperNames()))
+    return(jsonify(results=f.sendProperNames()))
 
 @app.route('/api/labs/<week>')
 def serveWeek(week):
