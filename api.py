@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.5
 
 import os, logging
 from flask import Flask, request, session, g, redirect, url_for, abort, \

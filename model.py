@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.5
 
 import os, markdown
 
@@ -45,4 +45,6 @@ if __name__ == '__main__':
                 'code': f.openFile(fp['path']),
                 'name': fp['name']
             }
-    print(res)
+    # print(res)
+    a = FileParser('labs')
+    print(a.sendProperNames())
