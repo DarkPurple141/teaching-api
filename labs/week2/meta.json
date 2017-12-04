@@ -1,4 +1,4 @@
 {
-   "description": "Lorem Ipsum",
-   "tags": ["Linked Lists", "C", "Extended Syntax"]
+   "description": "Stacks, Queues, and Testing",
+   "tags": ["stack", "queue", "testing"]
 }
