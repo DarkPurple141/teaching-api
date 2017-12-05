@@ -1,6 +1,7 @@
 
+typedef char Item;
 // Stack.h
-typedef struct stackImp *Stack;
+typedef struct _stackImp *Stack;
 //Function Prototypes
 Stack createStack( void );
 void destroyStack( Stack stack );
