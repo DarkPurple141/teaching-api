@@ -33,10 +33,18 @@ def test():
 def sendMeta(week):
     return send_from_directory("labs/{}/".format(week), 'meta.json')
 
+@app.route('/api/labs/meta/')
+def sendDescriptors():
+    f = FileParser('labs/')
+    return(
+        jsonify(
+            results=[ f.openFile(meta['path']) for meta in f.files ]
+            ))
+
 @app.route('/api/labs')
 def serveLabs():
     f = FileParser('labs/')
-    return(jsonify(results=f.sendProperNames()))
+    return(jsonify(results=f.sendFiles()))
 
 @app.route('/api/labs/<week>')
 def serveWeek(week):
