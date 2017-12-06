@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.5
 
-import os, logging
+import os, logging, json
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, jsonify, send_from_directory
 
@@ -36,7 +36,7 @@ def sendMeta(week):
 @app.route('/api/labs/meta/')
 def sendDescriptors():
     f = FileParser('labs/')
-    return [ jsonify(f.openFile(os.path.join(meta['path'], 'meta.json'))) for meta in f.files ]
+    return [ json.loads(f.openFile(os.path.join(meta['path'], 'meta.json'))) for meta in f.files ]
 
 @app.route('/api/labs')
 def serveLabs():
