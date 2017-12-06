@@ -38,7 +38,7 @@ def sendDescriptors():
     f = FileParser('labs/')
     return(
         jsonify(
-            results=[ f.openFile(meta['path']) for meta in f.files ]
+            results=[ f.openFile(os.path.join(meta['path'], 'meta.json')) for meta in f.files ]
             ))
 
 @app.route('/api/labs')
