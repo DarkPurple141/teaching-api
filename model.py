@@ -21,7 +21,7 @@ class FileParser(object):
         with open(file, mode='r', encoding="utf-8") as fo:
             return fo.read()
 
-    def sendProperNames(self):
+    def sendFiles(self):
         return [{
                     'path': i['path'],
                     'name': "Week {}".format(i['name'][4:]),
