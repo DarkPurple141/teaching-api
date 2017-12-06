@@ -39,7 +39,7 @@ def sendDescriptors():
     for file_name in range(1, 10):
         with open('labs/week{}/meta.json'.format(file_name)) as f:
             data.append(json.load(f))
-    return json.dumps(data)
+    return jsonify(results=data)
 
 @app.route('/api/labs')
 def serveLabs():
