@@ -1,3 +1,4 @@
+
 #ifndef TEXTBUFFER_H
 #define TEXTBUFFER_H
 
@@ -29,7 +30,7 @@ int linesTB (TB tb);
 void swapTB (TB tb, int pos1, int pos2);
 
 /* Merge 'tb2' into 'tb1' at line 'pos'.
- * 
+ *
  * - Afterwards line 0 of 'tb2' will be line 'pos' of 'tb1'.
  * - The old line 'pos' of 'tb1' will follow after the last line of 'tb2'.
  * - After this operation 'tb2' can not be used anymore (as if we had used
@@ -39,11 +40,11 @@ void swapTB (TB tb, int pos1, int pos2);
 void mergeTB (TB tb1, int pos, TB tb2);
 
 /* Copy 'tb2' into 'tb1' at line 'pos'.
- * 
+ *
  * - Afterwards line 0 of 'tb2' will be line 'pos' of 'tb1'.
  * - The old line 'pos' of 'tb1' will follow after the last line of 'tb2'.
  * - After this operation 'tb2' is unmodified and remains usable independent
- *   of 'tb1'. 
+ *   of 'tb1'.
  * - The program is to abort() with an error message if 'pos' is out of range.
  */
 void pasteTB (TB tb1, int pos, TB tb2);
@@ -54,7 +55,7 @@ void pasteTB (TB tb1, int pos, TB tb2);
  * - The result is a new textbuffer (much as one created with newTB()).
  * - The cut lines will be deleted from 'tb'.
  * - The program is to abort() with an error message if 'from' or 'to' is out
- *   of range. 
+ *   of range.
  */
 TB cutTB (TB tb, int from, int to);
 
@@ -64,7 +65,7 @@ TB cutTB (TB tb, int from, int to);
  * - The result is a new textbuffer (much as one created with newTB()).
  * - The textbuffer 'tb' will remain unmodified.
  * - The program is to abort() with an error message if 'from' or 'to' is out
- *   of range. 
+ *   of range.
  */
 TB copyTB (TB tb, int from, int to);
 
@@ -72,15 +73,15 @@ TB copyTB (TB tb, int from, int to);
  * 'tb'.
  *
  * - The program is to abort() with an error message if 'from' or 'to' is out
- *   of range. 
+ *   of range.
  */
 void deleteTB (TB tb, int from, int to);
 
 
-/* Search every line of tb for each occurrence of str1 and replaces them 
+/* Search every line of tb for each occurrence of str1 and replaces them
  * with str2
  */
-void replaceText (TB tb, char* str1, char* str2) ; 
+void replaceText (TB tb, char* str1, char* str2) ;
 
 /* Bonus Challenges
  */
@@ -90,5 +91,5 @@ char* diffTB (TB tb1, TB tb2) ;
 void undoTB (TB tb) ;
 
 void redoTB (TB tb) ;
- 
+
 #endif
