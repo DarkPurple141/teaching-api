@@ -11,3 +11,5 @@ void destroyTree(Tree t);
 void addToTree(Tree t, Item value);
 void removeFromtTree(Tree t, Item value);
 bool contains(Tree t, Item value);
+int size(Tree t);
+void printTree(Tree t);
