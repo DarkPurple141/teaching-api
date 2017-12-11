@@ -52,7 +52,7 @@ void destroyStack( Stack stack ) {
    free(stack);
 }
 
-// assume pop will return nothing
+// pops from top of stack
 Item pop( Stack stack) {
    if (!stackSize(stack)) {
       abort();
