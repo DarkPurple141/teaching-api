@@ -1,6 +1,9 @@
 
 #include "stack.h"
 #include <stdlib.h>
+
+// DO THIS YOURSELF!
+
 // Queue.h
 typedef struct queueImp *Queue;
 //Function Prototypes

@@ -64,6 +64,7 @@ static void initLines(char * text, TB init) {
    line curr = strtok(str, "\n");
    Node head = NULL;
    Node tail = head;
+   Node prev = NULL;
 
    while (curr) {
       if (!head) {
@@ -71,7 +72,9 @@ static void initLines(char * text, TB init) {
          tail = head;
       } else {
          tail->next = newNode(curr);
+         prev = tail;
          tail = tail->next;
+         tail->prev = prev;
       }
       curr = strtok(NULL, "\n");
       init->numLines++;
@@ -212,7 +215,31 @@ TB copyTB (TB tb, int from, int to) {
  * - The program is to abort() with an error message if 'from' or 'to' is out
  *   of range.
  */
-void deleteTB (TB tb, int from, int to);
+void deleteTB (TB tb, int from, int to) {
+   sanityCheck(tb, from, to, "deleteTB");
+   Node curr = tb->head;
+   Node pre = NULL:
+   int index = 0;
+
+   while (index < from) {
+      curr = curr->next;
+      index++;
+   }
+   pre = curr;
+
+   while (index < to) {
+      printf("curr -> %s\n", curr->line);
+      Node temp = curr->next;
+      tb->numBytes -= curr->size;
+      tb->numLines--;
+      deleteNode(curr);
+      curr = temp;
+      index++;
+   }
+
+   pre->next = curr;
+   curr->prev = pre;
+}
 
 
 /* Search every line of tb for each occurrence of str1 and replaces them
