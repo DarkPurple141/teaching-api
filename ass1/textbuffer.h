@@ -86,6 +86,7 @@ void replaceText (TB tb, char* str1, char* str2) ;
 /* Bonus Challenges
  */
 
+
 char* diffTB (TB tb1, TB tb2) ;
 
 void undoTB (TB tb) ;

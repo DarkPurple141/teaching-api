@@ -29,7 +29,7 @@ Tree newTree() {
    return new;
 }
 
-void destroyHelper(Leaf l) {
+static void destroyHelper(Leaf l) {
    if (l == NULL) {
       return;
    } else {
@@ -37,6 +37,34 @@ void destroyHelper(Leaf l) {
       destroyHelper(l->right);
       free(l);
    }
+}
+
+// ADDED IN LAB TODO
+int sumItems(Tree t) {
+   if (t == NULL) {
+      return 0;
+   } else {
+      return t->value + sumItems(t->left) + sumItems(t->right);
+   }
+}
+
+leaf insert(leaf t, int item) {
+   if (t == NULL) abort();
+
+   if (item < t->value) {
+      if (t->left != NULL) {
+         insert(t->left, item);
+      } else {
+         t->left = newLeaf(item);
+      }
+   } else {
+      if (t->right != NULL) {
+         insert(t->right, item);
+      } else {
+         t->right = newLeaf(item);
+      }
+   }
+
 }
 
 void destroyTree(Tree t) {
@@ -84,6 +112,21 @@ void printTree(Tree t) {
 
 void removeFromtTree(Tree t, Item value);
 
+static bool search(Leaf l, Item v) {
+   if (!l) return false;
+   if (l->value == v) {
+      return true;
+   } else {
+      bool retVal;
+      if (v < l->value) {
+         retVal = search(l->left, v);
+      } else {
+         retVal = search(l->right, v);
+      }
+      return retVal;
+   }
+}
+
 bool contains(Tree t, Item value) {
-   return true;
+   return search(t->root, value);
 }
