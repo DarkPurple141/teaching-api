@@ -1,9 +1,12 @@
+
+#include "../../libs/Graph/Graph.h"
+
 void dijkstra(Graph g,Vertex s){
     int v,t;
     PriQ pq = initPriQ(g->nV);
     //insert each vertex into the pq
     for(v=0;v< g->nV;v++){
-        insert(pq,newItem(dist[v],v));
+        insert(pq, newItem(dist[v], v));
     }
     dist[s] = 0.0; //set start veretex dist to 0
     increasePriority(pq,s,dist[s]); // update pq
