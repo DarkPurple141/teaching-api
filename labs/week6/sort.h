@@ -1,1 +1,2 @@
-void mergeSort(int * array, int size);
+
+void mergeSort(int * array, int lo, int hi);
